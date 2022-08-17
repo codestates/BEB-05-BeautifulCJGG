@@ -5,7 +5,7 @@ import LoginPage from './pages/LoginPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-import './App.css';
+import './assets/css/App.css';
 
 function App() {
   return (
