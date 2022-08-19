@@ -1,11 +1,11 @@
 // 예시코드입니다.
 import { collection, addDoc, getDocs } from "@firebase/firestore";
-import { dbService } from "./Firebase_init.js";
+import { db } from "./Firebase-init.js";
 
 // 🔥Create
 async function writeNftData(tokenId, name, imageUrl, description, owner){
   try{
-    const doc = await addDoc(collection(dbService, "nfts"), {
+    const doc = await addDoc(collection(db, "users"), {
       tokenId: tokenId,
       name: name,
       imageUrl: imageUrl,
@@ -22,7 +22,7 @@ async function writeNftData(tokenId, name, imageUrl, description, owner){
 
 // 🔥Read
 async function readAllNftData(){
-  const querySnapshot = await getDocs(collection(dbService, "nfts"));
+  const querySnapshot = await getDocs(collection(db, "users"));
   const result = [];
   querySnapshot.forEach((doc) => {
     // console.log(doc.data());
