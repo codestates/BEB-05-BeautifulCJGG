@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { logout } from "../apis/logout";
 
-export default function Header() {
-  const [login, setLogin] = useState(false);
+export default function Header(props) {
 
-  const onLogin = () => {
-    setLogin((invert) => !invert);
+  const onLogin = (e) => {
+    if(e.target.name === 'login'){
+      window.location.href = '/login';
+    }
+    else if(e.target.name === 'logout'){
+      logout();
+    }
   };
 
   return (
@@ -71,12 +75,18 @@ export default function Header() {
         </div>
       </div>
       <div className="buttonBox">
-        <button className="btn" onClick={onLogin} style={{}}>
-          {login ? "login" : "logout"}
-        </button>
-        <button className="btn" style={{ margin: "0 20px 0 20px" }}>
-          Sign Up
-        </button>
+        {
+          props.init === false
+          ? "로딩중"
+          : props.isLoggedIn === false
+            ? <button className="btn" name="login" onClick={onLogin}>Login</button>
+            : <button className="btn" name="logout" onClick={onLogin}>LogOut</button>
+        }
+        {
+          (props.isLoggedIn === false) && (props.init === true)
+          ? <button className="btn" style={{ margin: "0 20px 0 20px" }}>Sign Up</button>
+          : ""
+        }
       </div>
     </div>
   );

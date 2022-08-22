@@ -9,6 +9,7 @@ export async function login(userID, password, setError){
       })
       .then((result) => {
         console.log("🙆🏻‍♂️Login Success!");
+        window.location.href = '/';
       })
       .catch((error) => {
         if(setError){
