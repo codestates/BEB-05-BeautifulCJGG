@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { login } from '../apis/login';
+import signup from '../apis/signup';
 
-export default function LoginPage() {
+export default function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState('');
@@ -17,19 +17,18 @@ export default function LoginPage() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setError('');
-    const user = await login(email, password, setError);
+    const user = await signup(email, password, setError);
     console.log(user);
   };
 
   return (
     <div>
       <div>
-        <h2>LOGIN</h2>
+        <h2>Sign up</h2>
         <form onSubmit={onSubmit}>
           <input name='email' type='text' placeholder='Email' required value={email} onChange={onChange}></input>
           <input name='password' type='password' placeholder='Password' required value={password} onChange={onChange}></input>
-          <input type='submit' value="Log In"></input>
+          <input type='submit' value="Sign up"></input>
         </form>
       </div>
       <p>
