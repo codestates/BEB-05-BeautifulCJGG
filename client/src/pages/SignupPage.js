@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import signup from '../apis/signup';
 
-export default function LoginPage() {
+export default function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState('');
@@ -34,7 +34,6 @@ export default function LoginPage() {
       <p>
         {error}
       </p>
-      <a href='/'>GO TO LOGIN</a>
     </div>
   );
 }

@@ -11,6 +11,7 @@ export default async function signup(email, password, setError){
     })
     .then((userCredential) => {
       const user = userCredential.user;
+      window.location.href = '/';
       return user;
     })
     .catch((error) => {

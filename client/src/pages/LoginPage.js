@@ -35,7 +35,6 @@ export default function LoginPage() {
       <p>
         {error}
       </p>
-      <a href='/signup'>GO TO SIGNUP</a>
     </div>
   );
 }

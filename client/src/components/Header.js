@@ -11,6 +11,9 @@ export default function Header(props) {
     else if(e.target.name === 'logout'){
       logout();
     }
+    else if(e.target.name === 'signup'){
+      window.location.href = '/signup';
+    }
   };
 
   return (
@@ -84,7 +87,7 @@ export default function Header(props) {
         }
         {
           (props.isLoggedIn === false) && (props.init === true)
-          ? <button className="btn" style={{ margin: "0 20px 0 20px" }}>Sign Up</button>
+          ? <button className="btn" name="signup" style={{ margin: "0 20px 0 20px" }} onClick={onLogin}>Sign Up</button>
           : ""
         }
       </div>
