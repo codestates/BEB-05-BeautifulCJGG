@@ -1,19 +1,17 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import MainPage from './pages/MainPage';
-import LoginPage from './pages/LoginPage';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import LoginPage from "./pages/LoginPage";
 
-import Header from './components/Header';
-import Footer from './components/Footer';
-
-import './assets/css/App.css';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/' element={<MainPage />}></Route>
-        <Route path='/login' element={<LoginPage />}></Route>
+        <Route path="/" element={<MainPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
