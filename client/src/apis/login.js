@@ -1,11 +1,20 @@
-// 아래는 예시 코드입니다.
-import axios from 'axios';
+import { getAuth, setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "firebase/auth";
 
-export async function loginAPI(userID, password){
+export async function login(userID, password, setError){
   try {
-    const res = await axios.post("https://...", {
-      params: { userID, password },
-    });
+    const auth = getAuth();
+    setPersistence(auth, browserSessionPersistence)
+      .then(() => {
+        return signInWithEmailAndPassword(auth, userID, password);
+      })
+      .then((result) => {
+        console.log("🙆🏻‍♂️Login Success!");
+      })
+      .catch((error) => {
+        if(setError){
+          setError(error.message);
+        }
+      });
   } catch (e) {
     throw new Error(e);
   }
