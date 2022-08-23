@@ -13,7 +13,7 @@ contract ICMembership is ERC721URIStorage, Ownable {
     IERC20 token;
     uint256 nftPrice;
 
-    constructor() ERC721("MyNFTs", "MNFT") {
+    constructor() ERC721("ICMembership", "ICM") {
         nftPrice = 100e18;
     }
 
