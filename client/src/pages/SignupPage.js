@@ -17,8 +17,8 @@ export default function SignupPage() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const user = await signup(email, password, setError);
-    console.log(user);
+    const newAccount = await signup(email, password, setError);
+    console.log('🪪계정 주소: ', newAccount);
   };
 
   return (
