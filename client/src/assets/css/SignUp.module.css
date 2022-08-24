@@ -1,13 +1,13 @@
 img {
   width: 100%;
 }
-.login {
+.signup {
   height: 1000px;
   width: 100%;
   background: radial-gradient(#dedbf9, #e9e8f7);
   position: relative;
 }
-.login_box {
+.signup_box {
   width: 1050px;
   height: 600px;
   position: absolute;
@@ -20,12 +20,12 @@ img {
   display: flex;
   overflow: hidden;
 }
-.login_box .left {
+.signup_box .left {
   width: 41%;
   height: 100%;
   padding: 25px 25px;
 }
-.login_box .right {
+.signup_box .right {
   width: 59%;
   height: 100%;
 }
