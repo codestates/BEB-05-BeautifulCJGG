@@ -1,18 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import styles from "../assets/css/btn.module.css";
 import { logout } from "../apis/logout";
+import NavItem from "./NavItem";
 
 export default function Header(props) {
-
   const onLogin = (e) => {
-    if(e.target.name === 'login'){
-      window.location.href = '/login';
-    }
-    else if(e.target.name === 'logout'){
+    if (e.target.name === "login") {
+      window.location.href = "/login";
+    } else if (e.target.name === "logout") {
       logout();
-    }
-    else if(e.target.name === 'signup'){
-      window.location.href = '/signup';
+    } else if (e.target.name === "signup") {
+      window.location.href = "/signup";
     }
   };
 
@@ -24,72 +22,56 @@ export default function Header(props) {
         justifyContent: "space-between",
         height: "80px",
         alignItems: "center",
+        boxShadow: "rgb(4 17 29 / 25%) 0px 0px 8px 0px",
       }}
     >
       <div>
-        <div className="logo">로고 자리</div>
+        <div className="logo" style={{ height: "50px", marginLeft: "10px" }}>
+          <img
+            style={{ height: "100%" }}
+            src={require(`../assets/images/CJGG Logo.png`)}
+          />
+        </div>
       </div>
       <div
         className="navBox"
         style={{ display: "flex", justifyContent: "space-between" }}
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "10px",
-            margin: "0 20px 0 0",
-            fontSize: "16px",
-
-            border: "1px solid #C8C3FB",
-            borderRadius: "10px",
-          }}
-        >
-          <Link style={{ textDecoration: "none" }} to={"/"}>
-            Main
-          </Link>
-        </div>
-        <div
-          style={{
-            padding: "10px",
-            margin: "0 20px 0 20px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            border: "1px solid #C8C3FB",
-            borderRadius: "10px",
-          }}
-        >
-          Membership Marketplace
-        </div>
-        <div
-          style={{
-            padding: "10px",
-            margin: "0 20px 0 20px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            border: "1px solid #C8C3FB",
-            borderRadius: "10px",
-          }}
-        >
-          My Page
-        </div>
+        <NavItem title={"Main"} nav={"/"} />
+        <NavItem
+          title={"Membership Marketplace"}
+          nav={"/Membership Marketplace"}
+        />
+        <NavItem title={"My Page"} nav={"My Page"} />
       </div>
       <div className="buttonBox">
-        {
-          props.init === false
-          ? "로딩중"
-          : props.isLoggedIn === false
-            ? <button className="btn" name="login" onClick={onLogin}>Login</button>
-            : <button className="btn" name="logout" onClick={onLogin}>LogOut</button>
-        }
-        {
-          (props.isLoggedIn === false) && (props.init === true)
-          ? <button className="btn" name="signup" style={{ margin: "0 20px 0 20px" }} onClick={onLogin}>Sign Up</button>
-          : ""
-        }
+        {props.init === false ? (
+          "로딩중"
+        ) : props.isLoggedIn === false ? (
+          <button className={`${styles.Button}`} name="login" onClick={onLogin}>
+            Login
+          </button>
+        ) : (
+          <button
+            className={`${styles.Button}`}
+            name="logout"
+            onClick={onLogin}
+          >
+            LogOut
+          </button>
+        )}
+        {props.isLoggedIn === false && props.init === true ? (
+          <button
+            className={`${styles.Button}`}
+            name="signup"
+            style={{ margin: "0 20px 0 20px" }}
+            onClick={onLogin}
+          >
+            Sign Up
+          </button>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
