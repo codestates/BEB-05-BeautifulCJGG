@@ -9,7 +9,6 @@ const getPosts = (req, res) => {
   const posts = data.posts;
     res.json(posts);
 }
-
 const createNewPost = (req, res) => {
   const newPost = {
       postId: data.posts?.length ? parseInt(data.posts[data.posts.length - 1].postId) + 1 : 1,
