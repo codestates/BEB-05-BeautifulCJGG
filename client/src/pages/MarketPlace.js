@@ -24,18 +24,18 @@ function MarketPlace() {
       <div className={styles.CardBox}>
         <div>
           <div className={styles.Card1}>
-            <Card infoText={"0001"} price={"0.1"} />
+            <Card infoText={"0001"} price={"0.1"} btnName={"Mint"} />
           </div>
           <div className={styles.Card2}>
-            <Card infoText={"0002"} price={"0.1"} />
+            <Card infoText={"0002"} price={"0.1"} btnName={"Mint"} />
           </div>
         </div>
         <div>
           <div className={styles.Card1}>
-            <Card infoText={"0003"} price={"0.1"} />
+            <Card infoText={"0003"} price={"0.1"} btnName={"Mint"} />
           </div>
           <div className={styles.Card2}>
-            <Card infoText={"0004"} price={"0.1"} />
+            <Card infoText={"0004"} price={"0.1"} btnName={"Mint"} />
           </div>
         </div>
       </div>

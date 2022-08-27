@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../assets/css/MembershipCard.module.css";
 
-function Card({ infoText, price }) {
+function Card({ infoText, price, btnName }) {
   return (
     <div className={styles.nftBox}>
       <div className={styles.nftImgBox}>
@@ -21,7 +21,7 @@ function Card({ infoText, price }) {
           className={styles.nftInfo}
         >
           <div className={styles.infoNum}>'#' {infoText} Membership</div>
-          <button className={styles.button}>Mint</button>
+          <button className={styles.button}>{btnName}</button>
         </div>
         <div className={styles.nftInfoPrice}>
           <div className={styles.infoText}>Price</div>
