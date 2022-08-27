@@ -1,0 +1,22 @@
+.CardBox {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 30px;
+}
+.ButtonBox {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #e5e8eb;
+  height: 100px;
+  width: 100%;
+}
+.Button1 {
+  margin-right: 50px;
+}
+.Button2 {
+  margin-left: 50px;
+}
+.Card1 {
+  margin-bottom: 30px;
+}

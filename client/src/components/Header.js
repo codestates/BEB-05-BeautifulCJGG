@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../assets/css/btn.module.css";
+import styles from "../assets/css/HeaderBtn.module.css";
 import { logout } from "../apis/logout";
 import NavItem from "./NavItem";
 
@@ -18,9 +18,14 @@ export default function Header(props) {
     <div
       className="headerBar"
       style={{
+        backgroundColor: "white",
+        position: "fixed",
+        zIndex: "2",
+        top: "0",
         display: "flex",
         justifyContent: "space-between",
         height: "80px",
+        width: "100%",
         alignItems: "center",
         boxShadow: "rgb(4 17 29 / 25%) 0px 0px 8px 0px",
       }}
@@ -30,6 +35,7 @@ export default function Header(props) {
           <img
             style={{ height: "100%" }}
             src={require(`../assets/images/CJGG Logo.png`)}
+            alt="img"
           />
         </div>
       </div>
@@ -38,11 +44,8 @@ export default function Header(props) {
         style={{ display: "flex", justifyContent: "space-between" }}
       >
         <NavItem title={"Main"} nav={"/"} />
-        <NavItem
-          title={"Membership Marketplace"}
-          nav={"/Membership Marketplace"}
-        />
-        <NavItem title={"My Page"} nav={"My Page"} />
+        <NavItem title={"Membership Marketplace"} nav={"/Marketplace"} />
+        <NavItem title={"My Page"} nav={"/mypage"} />
       </div>
       <div className="buttonBox">
         {props.init === false ? (

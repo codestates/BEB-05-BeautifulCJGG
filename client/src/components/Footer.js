@@ -1,9 +1,11 @@
 import React from "react";
 import GitInfo from "./GitInfo";
+import styles from "../assets/css/Footer.module.css";
 
 export default function Footer() {
   return (
     <div
+      className={styles.footer}
       style={{
         height: "80px",
         display: "flex",
@@ -12,7 +14,15 @@ export default function Footer() {
         boxShadow: "rgb(4 17 29 / 25%) 0px 0px 8px 0px",
       }}
     >
-      <div style={{ width: "40px", height: "40px", marginLeft: "20px" }}>
+      <div
+        style={{
+          width: "40px",
+          height: "40px",
+          marginLeft: "20px",
+          backgroundColor: "white",
+          borderRadius: "50%",
+        }}
+      >
         <a
           href="https://github.com/codestates/BEB-05-BeautifulCJGG"
           target={"_blank"}
